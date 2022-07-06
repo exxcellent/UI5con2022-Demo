@@ -1,0 +1,122 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "de.exxcellent.ui5con.Data",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.11.15"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "resourceRoots": {
+      "de.exxcellent.ui5con.Data": "./"
+    },
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "": {
+        "type": "sap.ui.model.json.JSONModel"
+      },
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "de.exxcellent.ui5con.Data.i18n.i18n",
+          "supportedLocales": [""],
+          "fallbackLocale": ""
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.f.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "de.exxcellent.ui5con.Data.view",
+        "controlAggregation": "beginColumnPages",
+        "controlId": "navContainer",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "list",
+          "pattern": ":?query:",
+          "target": [
+            "List"
+          ],
+          "layout": "OneColumn"
+        },
+        {
+          "name": "edit",
+          "pattern": "data/{id}:?query:",
+          "target": [
+            "List",
+            "Detail"
+          ],
+          "layout": "TwoColumnsMidExpanded"
+        }
+      ],
+      "targets": {
+        "List": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "List",
+          "viewName": "List"
+        },
+        "Detail": {
+          "viewType": "XML",
+          "clearControlAggregation": false,
+          "viewId": "Detail",
+          "viewName": "Detail",
+          "controlAggregation": "midColumnPages"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "de.exxcellent.ui5con.Data.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

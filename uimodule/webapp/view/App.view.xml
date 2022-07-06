@@ -1,0 +1,17 @@
+<mvc:View controllerName="de.exxcellent.ui5con.Demo.controller.App" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns:core="sap.ui.core"
+xmlns="sap.m"
+displayBlock="true" 
+>
+    <App id="app">
+        <Page id="appPage" enableScrolling="false" >
+            <customHeader>
+                <core:Fragment fragmentName="de.exxcellent.ui5con.Demo.view.AppHeader" type="XML" />
+            </customHeader>
+            <content>
+                <NavContainer id="navContainer" />
+            </content>
+        </Page>
+    </App>
+</mvc:View>

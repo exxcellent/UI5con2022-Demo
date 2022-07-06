@@ -1,0 +1,9 @@
+<mvc:View controllerName="de.exxcellent.ui5con.Data.controller.List" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showHeader="false">
+        <List id="dataList" items="{}" mode="SingleSelectMaster" selectionChange=".onListItemSelected(${$parameters>/listItem})">
+            <items>
+                <StandardListItem title="{name}" type="Navigation" />
+            </items>
+        </List>
+    </Page>
+</mvc:View>

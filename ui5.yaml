@@ -1,0 +1,4 @@
+specVersion: '2.6'
+metadata:
+  name: ui5con-demo
+type: application

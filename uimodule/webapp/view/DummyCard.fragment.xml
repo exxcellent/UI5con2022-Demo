@@ -1,0 +1,29 @@
+<core:FragmentDefinition
+	xmlns="sap.f"
+	xmlns:card="sap.f.cards"
+	xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+>
+
+
+<!-- This card just provides a bit of "scenery" for the dashboard but is irrelevant to the showcase -->
+
+
+<Card>
+    <layoutData>
+        <GridContainerItemLayoutData minRows="4" columns="3" />
+    </layoutData>
+    <header>
+        <card:Header
+            title="Static card"
+            class="sapThemeFontSize"
+            subtitle="for the dashboard"
+            iconSrc="sap-icon://bbyd-dashboard"
+        />
+    </header>
+    <content>
+        <m:Text text="...so it doesn't look completely empty" class="sapUiSmallMargin"
+        />
+    </content>
+</Card>
+</core:FragmentDefinition>

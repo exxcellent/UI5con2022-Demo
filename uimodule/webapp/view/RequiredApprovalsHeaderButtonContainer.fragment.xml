@@ -1,0 +1,11 @@
+<!-- Acts as container for the button usage provided by the data component -->
+
+<ComponentContainer
+	xmlns="sap.ui.core"
+	usage="requiredApprovalsButton"
+	propagateModel="true"
+	height="100%"
+	async="true"
+	manifest="true"
+	componentCreated=".onComponentCreated"
+/>

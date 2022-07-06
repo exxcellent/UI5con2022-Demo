@@ -1,0 +1,8 @@
+<mvc:View controllerName="de.exxcellent.ui5con.Data.controller.App" 
+xmlns:mvc="sap.ui.core.mvc"
+xmlns="sap.f"
+displayBlock="true" 
+height="100%"
+>
+    <FlexibleColumnLayout id="navContainer" />
+</mvc:View>

@@ -1,0 +1,173 @@
+{
+  "_version": "1.12.0",
+  "sap.app": {
+    "id": "de.exxcellent.ui5con.Demo",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap-ux/fiori-freestyle-writer:basic",
+      "version": "0.11.15"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.60.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "de.exxcellent.ui5con.Demo.i18n.i18n",
+          "supportedLocales": [""],
+          "fallbackLocale": ""
+        }
+      },
+      "components": {
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "resourceRoots": {
+      "de.exxcellent.ui5con.Demo": "./",
+      "de.exxcellent.ui5con.Data": "./components/data"
+    },
+    "componentUsages": {
+      "standard": {
+        "name": "de.exxcellent.ui5con.Data",
+        "settings": {
+          "id": "StandardDataComponent"
+        }
+      },
+      "standardRed": {
+        "name": "de.exxcellent.ui5con.Data",
+        "settings": {
+          "id": "StandardDataComponentRed",
+          "componentData": { "mode": "red" }
+        }
+      },
+      "requiredApprovalsButton": {
+        "name": "de.exxcellent.ui5con.Data",
+        "settings": {
+          "id": "EmbeddedDataComponentAsButton",
+          "componentData": { "embed": "requiredApprovalsButton" }
+        }
+      },
+      "requiredApprovalsCard": {
+        "name": "de.exxcellent.ui5con.Data",
+        "settings": {
+          "id": "EmbeddedDataComponentAsCard",
+          "componentData": { "embed": "requiredApprovalsCard" }
+        }
+      }
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "de.exxcellent.ui5con.Demo.view",
+        "controlAggregation": "pages",
+        "controlId": "navContainer",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "dashboard",
+          "pattern": ":?query:",
+          "target": [
+            "Dashboard"
+          ]
+        },
+        {
+          "name": "blue",
+          "pattern": "componentBlue",
+          "target": {
+            "name": "ComponentBlue",
+            "prefix": "bl"
+          },
+          "lazy": true
+        },
+        {
+          "name": "red",
+          "pattern": "componentRed",
+          "target": {
+            "name": "ComponentRed",
+            "prefix": "rd"
+          },
+          "lazy": true
+        }
+      ],
+      "targets": {
+        "Dashboard": {
+          "type": "View",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "Dashboard",
+          "viewName": "Dashboard",
+          "viewLevel": 0
+        },
+        "ComponentBlue": {
+          "type": "Component",
+          "usage": "standard",
+          "id": "StandardDataComponent",
+          "containerOptions": {
+            "propagateModel": true
+          },
+          "viewLevel": 1
+        },
+        "ComponentRed": {
+          "type": "Component",
+          "usage": "standardRed",
+          "id": "StandardDataComponentModeRed",
+          "containerOptions": {
+            "propagateModel": true
+          },
+          "viewLevel": 1
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "de.exxcellent.ui5con.Demo.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

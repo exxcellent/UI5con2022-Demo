@@ -1,0 +1,28 @@
+<core:FragmentDefinition
+	xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+>
+<Toolbar id="appHeader"
+     class="appHeader"
+    >
+        <core:Icon src="sap-icon://home" press=".navTo('dashboard')" />
+        <ToolbarSeparator />
+
+        <!-- Standard use - embedding the component as routing target -->
+        <Link text="Component (Blue)" tooltip="Show our sample component with 'blue' data"
+            press=".navTo('blue')"  />
+        <ToolbarSeparator />
+
+        <!-- Component usage with different operation mode -->
+        <Link text="Component (Red)" tooltip="Show our sample component with 'red' data"
+            press=".navTo('red')"/>
+        <ToolbarSeparator/>
+
+        <Text text="..." />
+        <ToolbarSpacer/>
+
+        <!-- Component usage with specific output format (button) -->
+        <core:Fragment fragmentName="de.exxcellent.ui5con.Demo.view.RequiredApprovalsHeaderButtonContainer" type="XML" />
+
+    </Toolbar>
+</core:FragmentDefinition>

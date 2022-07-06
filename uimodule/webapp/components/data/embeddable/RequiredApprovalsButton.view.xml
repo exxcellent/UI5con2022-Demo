@@ -1,0 +1,22 @@
+<mvc:View
+	controllerName="de.exxcellent.ui5con.Data.embeddable.RequiredApprovalsButton"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<Button
+		id="requiredApprovalsButton"
+		icon="sap-icon://approvals"
+		type="Transparent"
+        tooltip="Required Approvals"
+	>
+		<customData>
+			<BadgeCustomData
+				key="badge"
+				value="{/requiredApprovalsCount}"
+			/>
+		</customData>
+	</Button>
+</mvc:View>

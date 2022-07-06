@@ -1,0 +1,40 @@
+<mvc:View
+	controllerName="de.exxcellent.ui5con.Demo.controller.Dashboard"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.f"
+	xmlns:m="sap.m"
+    xmlns:core="sap.ui.core"
+>
+	<m:Page
+		id="page"
+		title="{i18n>title}"
+		showHeader="false"
+	>
+    <GridContainer
+        id="dashboardGrid"
+        class="sapUiSmallMargin sapUiLargeMarginBegin sapUiContentPadding"
+        width="100%"
+    >
+        <layout>
+            <GridContainerSettings
+                rowSize="2rem"
+                columnSize="5rem"
+                gap="1rem"
+            />
+        </layout>
+        <layoutS>
+            <GridContainerSettings
+                maxColumnSize="3rem"
+                minColumnSize="1rem"
+                gap=".2rem"
+            />
+        </layoutS>
+        <core:Fragment fragmentName="de.exxcellent.ui5con.Demo.view.DummyCard" type="XML" />
+
+        <!-- Component usage with specific output format (card) -->
+        <core:Fragment fragmentName="de.exxcellent.ui5con.Demo.view.RequiredApprovalsCardContainer" type="XML" />
+    </GridContainer>
+		
+	</m:Page>
+</mvc:View>

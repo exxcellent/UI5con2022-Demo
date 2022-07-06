@@ -1,0 +1,54 @@
+<mvc:View
+	controllerName="de.exxcellent.ui5con.Data.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:form="sap.ui.layout.form"
+>
+	<Page
+		id="page"
+		title="{name}"
+		showFooter="{= ${message>/}.length > 0}"
+		floatingFooter="true"
+		showNavButton="true"
+		navButtonPress=".closeDetail"
+	>
+	    <Toolbar>   
+			<ToolbarSpacer/>
+			<CheckBox text="Simulate dirty state" select=".onDirtyStateSelected(${$parameters>/selected})" />
+		</Toolbar>
+		<form:SimpleForm>
+			<Title text="Status"/>
+			<Label text="Remarks"/>
+			<Input value="{
+				path: 'remarks',
+				type: 'sap.ui.model.type.String',
+				formatOptions: {
+				emptyString: null
+			},
+				constraints: {
+					minLength: 3,
+					maxLength: 100
+				}
+			}"/>
+			<Label text="Approved"/>
+			<Switch
+				state="{approved}"
+				type="AcceptReject"
+				change=".onApprovalChanged"
+			/>
+		</form:SimpleForm>
+		<footer>
+			<OverflowToolbar>
+				<Button
+					id="messagePopoverBtn"
+					type="Emphasized"
+					icon="sap-icon://message-popup"
+					text="{= ${message>/}.length}"
+					visible="{= ${message>/}.length > 0}"
+                    press=".handleMessagePopoverPress"
+				/>
+			</OverflowToolbar>
+		</footer>
+	</Page>
+</mvc:View>

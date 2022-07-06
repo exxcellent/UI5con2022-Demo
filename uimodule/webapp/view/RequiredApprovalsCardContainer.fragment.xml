@@ -1,0 +1,23 @@
+<FragmentDefinition
+	xmlns="sap.ui.core"
+	xmlns:f="sap.f"
+>
+
+<!-- Acts as container for the card usage provided by the data component -->
+
+<ComponentContainer
+            usage="requiredApprovalsCard"
+            propagateModel="true"
+            width="100%"
+            height="100%"
+            async="true"
+            componentCreated=".onComponentCreated"
+        >
+            <layoutData>
+                <f:GridContainerItemLayoutData
+                    minRows="4"
+                    columns="4"
+                />
+            </layoutData>
+        </ComponentContainer>
+</FragmentDefinition>

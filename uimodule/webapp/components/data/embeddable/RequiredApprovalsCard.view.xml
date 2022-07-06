@@ -1,0 +1,33 @@
+<mvc:View
+	controllerName="de.exxcellent.ui5con.Data.embeddable.RequiredApprovalsCard"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.f"
+	xmlns:core="sap.ui.core"
+	xmlns:card="sap.f.cards"
+	displayBlock="true"
+	height="100%"
+	busyIndicatorDelay="0"
+>
+	<Card
+		busy="{/loading}"
+		busyIndicatorDelay="0"
+	>
+		<header>
+			<card:Header
+				title="Required Approvals"
+				statusText="{
+					parts: ['i18n>card.requiredApprovals.header.count', '/dataItems', '/requiredApprovalsCount'],
+					formatter: '.formatRequiredApprovalsHeaderCount'
+				}"
+				class="sapThemeFontSize"
+				iconSrc="sap-icon://approvals"
+			/>
+		</header>
+		<content>
+			<core:Fragment
+				fragmentName="de.exxcellent.ui5con.Data.embeddable.RequiredApprovalsList"
+				type="XML"
+			/>
+		</content>
+	</Card>
+</mvc:View>
